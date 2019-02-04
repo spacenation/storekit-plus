@@ -1,1 +1,1 @@
-# storefront-apple
+### Storefront library

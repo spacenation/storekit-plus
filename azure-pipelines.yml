@@ -1,0 +1,67 @@
+trigger:
+- master
+
+jobs:
+- job: Code_Quality
+  pool:
+    vmImage: 'Ubuntu 16.04'
+  container: norionomura/swiftlint:swift-4.2.1
+  timeoutInMinutes: 5
+  steps:
+  - script: |
+      set -o pipefail
+      swiftlint lint --strict
+    displayName: 'swift lint'
+  
+- job: SPM_Tests
+  dependsOn: Code_Quality
+  pool:
+    vmImage: 'macOS 10.13'
+  timeoutInMinutes: 5
+  steps:
+  - script: |
+      set -o pipefail
+      swift test --parallel
+    displayName: 'swift test'
+    
+- job: iOS_Tests
+  dependsOn: Code_Quality
+  pool:
+   vmImage: 'macOS 10.13'
+  timeoutInMinutes: 5
+  steps:
+  - task: Xcode@5
+    displayName: 'Xcode iOS Tests'
+    inputs:
+      actions: 'build test'
+      scheme: 'Storefront iOS'
+      sdk: 'iphonesimulator'
+      configuration: 'Debug'
+      xcodeVersion: '10'
+      packageApp: false
+      destinationSimulators: 'iPhone 7'
+      destinationTypeOption: 'simulators'
+      destinationPlatformOption: 'iOS'
+      signingOption: "auto"
+      useXcpretty: true
+      publishJUnitResults: 'build/reports/junit.xml'
+      
+- job: macOS_Tests
+  dependsOn: Code_Quality
+  pool:
+   vmImage: 'macOS 10.13'
+  timeoutInMinutes: 5
+  steps:
+  - task: Xcode@5
+    displayName: 'Xcode macOS Tests'
+    inputs:
+      actions: 'build test'
+      scheme: 'Storefront macOS'
+      sdk: 'macosx'
+      configuration: 'Debug'
+      xcodeVersion: '10'
+      packageApp: false
+      destinationPlatformOption: 'macOS'
+      signingOption: "nosign"
+      useXcpretty: true
+      publishJUnitResults: 'build/reports/junit.xml'
