@@ -58,6 +58,8 @@
 		E1CEC2942208913800D4905C /* StorefrontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorefrontTests.swift; sourceTree = "<group>"; };
 		E1CEC2972208926F00D4905C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E1CEC2982208935900D4905C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		E1CEC29A22089B0E00D4905C /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		E1CEC29B22089B1A00D4905C /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		E1CEC26E22088B3800D4905C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E1CEC29A22089B0E00D4905C /* LinuxMain.swift */,
 				E1CEC2932208910E00D4905C /* StorefrontTests */,
 			);
 			path = Tests;
@@ -157,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				E1CEC2942208913800D4905C /* StorefrontTests.swift */,
+				E1CEC29B22089B1A00D4905C /* XCTestManifests.swift */,
 			);
 			path = StorefrontTests;
 			sourceTree = "<group>";

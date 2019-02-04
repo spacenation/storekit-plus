@@ -101,3 +101,5 @@ identifier_name:
 
 excluded:
 - Dependencies
+- Tests/LinuxMain.swift
+- Tests/*/XCTestManifests.swift
