@@ -39,7 +39,6 @@ jobs:
       configuration: 'Debug'
       xcodeVersion: '10'
       packageApp: false
-      destinationSimulators: 'iPhone 7'
       destinationTypeOption: 'simulators'
       destinationPlatformOption: 'iOS'
       signingOption: "auto"

@@ -56,6 +56,7 @@
 		E1CEC28922088CEB00D4905C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CEC29222088EE400D4905C /* azure-pipelines.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = "<group>"; };
 		E1CEC2942208913800D4905C /* StorefrontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorefrontTests.swift; sourceTree = "<group>"; };
+		E1CEC2972208926F00D4905C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +96,7 @@
 		E1CEC24B22088A2F00D4905C = {
 			isa = PBXGroup;
 			children = (
+				E1CEC2972208926F00D4905C /* Package.swift */,
 				E1CEC25322088A8200D4905C /* .gitignore */,
 				E1CEC25222088A7A00D4905C /* README.md */,
 				E1CEC29222088EE400D4905C /* azure-pipelines.yml */,
