@@ -39,6 +39,7 @@ jobs:
       configuration: 'Debug'
       xcodeVersion: '10'
       packageApp: false
+      destinationSimulators: 'iPhone X'
       destinationTypeOption: 'simulators'
       destinationPlatformOption: 'iOS'
       signingOption: "auto"
