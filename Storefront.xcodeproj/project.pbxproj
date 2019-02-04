@@ -11,6 +11,8 @@
 		E1CEC27122088C1F00D4905C /* Storefront.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC26F22088C1F00D4905C /* Storefront.swift */; };
 		E1CEC27B22088CBA00D4905C /* libStorefront iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CEC25822088AB200D4905C /* libStorefront iOS.a */; };
 		E1CEC28A22088CEB00D4905C /* libStorefront macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CEC26422088AFA00D4905C /* libStorefront macOS.a */; };
+		E1CEC2952208913800D4905C /* StorefrontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC2942208913800D4905C /* StorefrontTests.swift */; };
+		E1CEC2962208913800D4905C /* StorefrontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC2942208913800D4905C /* StorefrontTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		E1CEC28522088CEB00D4905C /* Storefront macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Storefront macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CEC28922088CEB00D4905C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CEC29222088EE400D4905C /* azure-pipelines.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = "<group>"; };
+		E1CEC2942208913800D4905C /* StorefrontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorefrontTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 		E1CEC26E22088B3800D4905C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E1CEC2932208910E00D4905C /* StorefrontTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -143,6 +147,14 @@
 				E1CEC28922088CEB00D4905C /* Info.plist */,
 			);
 			path = "Storefront macOSTests";
+			sourceTree = "<group>";
+		};
+		E1CEC2932208910E00D4905C /* StorefrontTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1CEC2942208913800D4905C /* StorefrontTests.swift */,
+			);
+			path = StorefrontTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +261,11 @@
 					};
 					E1CEC27522088CBA00D4905C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					E1CEC28422088CEB00D4905C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -350,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CEC2952208913800D4905C /* StorefrontTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CEC2962208913800D4905C /* StorefrontTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
