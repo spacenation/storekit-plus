@@ -13,6 +13,20 @@
 		E1CEC28A22088CEB00D4905C /* libStorefront.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CEC26422088AFA00D4905C /* libStorefront.a */; };
 		E1CEC2952208913800D4905C /* StorefrontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC2942208913800D4905C /* StorefrontTests.swift */; };
 		E1CEC2962208913800D4905C /* StorefrontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC2942208913800D4905C /* StorefrontTests.swift */; };
+		E1CEC2A22209CE1500D4905C /* Storefront+ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC29C2209CE1500D4905C /* Storefront+ProductRequest.swift */; };
+		E1CEC2A32209CE1500D4905C /* Storefront+ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC29C2209CE1500D4905C /* Storefront+ProductRequest.swift */; };
+		E1CEC2A42209CE1500D4905C /* Storefront+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC29D2209CE1500D4905C /* Storefront+Delegates.swift */; };
+		E1CEC2A52209CE1500D4905C /* Storefront+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC29D2209CE1500D4905C /* Storefront+Delegates.swift */; };
+		E1CEC2A62209CE1500D4905C /* Storefront+Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC29E2209CE1500D4905C /* Storefront+Transaction.swift */; };
+		E1CEC2A72209CE1500D4905C /* Storefront+Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC29E2209CE1500D4905C /* Storefront+Transaction.swift */; };
+		E1CEC2A82209CE1500D4905C /* Storefront+Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC29F2209CE1500D4905C /* Storefront+Purchase.swift */; };
+		E1CEC2A92209CE1500D4905C /* Storefront+Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC29F2209CE1500D4905C /* Storefront+Purchase.swift */; };
+		E1CEC2AA2209CE1500D4905C /* Storefront+CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC2A02209CE1500D4905C /* Storefront+CloudSync.swift */; };
+		E1CEC2AB2209CE1500D4905C /* Storefront+CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC2A02209CE1500D4905C /* Storefront+CloudSync.swift */; };
+		E1CEC2AC2209CE1500D4905C /* Storefront+Restore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC2A12209CE1500D4905C /* Storefront+Restore.swift */; };
+		E1CEC2AD2209CE1500D4905C /* Storefront+Restore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC2A12209CE1500D4905C /* Storefront+Restore.swift */; };
+		E1CEC2B02209CE4C00D4905C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CEC2AF2209CE4C00D4905C /* StoreKit.framework */; };
+		E1CEC2B22209CE5500D4905C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CEC2B12209CE5500D4905C /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +72,14 @@
 		E1CEC2942208913800D4905C /* StorefrontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorefrontTests.swift; sourceTree = "<group>"; };
 		E1CEC2972208926F00D4905C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E1CEC2982208935900D4905C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		E1CEC29A22089B0E00D4905C /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
-		E1CEC29B22089B1A00D4905C /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		E1CEC29C2209CE1500D4905C /* Storefront+ProductRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storefront+ProductRequest.swift"; sourceTree = "<group>"; };
+		E1CEC29D2209CE1500D4905C /* Storefront+Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storefront+Delegates.swift"; sourceTree = "<group>"; };
+		E1CEC29E2209CE1500D4905C /* Storefront+Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storefront+Transaction.swift"; sourceTree = "<group>"; };
+		E1CEC29F2209CE1500D4905C /* Storefront+Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storefront+Purchase.swift"; sourceTree = "<group>"; };
+		E1CEC2A02209CE1500D4905C /* Storefront+CloudSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storefront+CloudSync.swift"; sourceTree = "<group>"; };
+		E1CEC2A12209CE1500D4905C /* Storefront+Restore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storefront+Restore.swift"; sourceTree = "<group>"; };
+		E1CEC2AF2209CE4C00D4905C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		E1CEC2B12209CE5500D4905C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CEC2B02209CE4C00D4905C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CEC2B22209CE5500D4905C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +131,7 @@
 				E1CEC26D22088B1E00D4905C /* Sources */,
 				E1CEC26E22088B3800D4905C /* Tests */,
 				E1CEC25922088AB200D4905C /* Products */,
+				E1CEC2AE2209CE4B00D4905C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,7 +157,6 @@
 		E1CEC26E22088B3800D4905C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E1CEC29A22089B0E00D4905C /* LinuxMain.swift */,
 				E1CEC2932208910E00D4905C /* StorefrontTests */,
 			);
 			path = Tests;
@@ -160,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				E1CEC2942208913800D4905C /* StorefrontTests.swift */,
-				E1CEC29B22089B1A00D4905C /* XCTestManifests.swift */,
 			);
 			path = StorefrontTests;
 			sourceTree = "<group>";
@@ -169,8 +190,23 @@
 			isa = PBXGroup;
 			children = (
 				E1CEC26F22088C1F00D4905C /* Storefront.swift */,
+				E1CEC2A02209CE1500D4905C /* Storefront+CloudSync.swift */,
+				E1CEC29D2209CE1500D4905C /* Storefront+Delegates.swift */,
+				E1CEC29C2209CE1500D4905C /* Storefront+ProductRequest.swift */,
+				E1CEC29F2209CE1500D4905C /* Storefront+Purchase.swift */,
+				E1CEC2A12209CE1500D4905C /* Storefront+Restore.swift */,
+				E1CEC29E2209CE1500D4905C /* Storefront+Transaction.swift */,
 			);
 			path = Storefront;
+			sourceTree = "<group>";
+		};
+		E1CEC2AE2209CE4B00D4905C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1CEC2B12209CE5500D4905C /* StoreKit.framework */,
+				E1CEC2AF2209CE4C00D4905C /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,7 +400,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CEC2AA2209CE1500D4905C /* Storefront+CloudSync.swift in Sources */,
+				E1CEC2AC2209CE1500D4905C /* Storefront+Restore.swift in Sources */,
 				E1CEC27022088C1F00D4905C /* Storefront.swift in Sources */,
+				E1CEC2A22209CE1500D4905C /* Storefront+ProductRequest.swift in Sources */,
+				E1CEC2A82209CE1500D4905C /* Storefront+Purchase.swift in Sources */,
+				E1CEC2A62209CE1500D4905C /* Storefront+Transaction.swift in Sources */,
+				E1CEC2A42209CE1500D4905C /* Storefront+Delegates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +414,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CEC2AB2209CE1500D4905C /* Storefront+CloudSync.swift in Sources */,
+				E1CEC2AD2209CE1500D4905C /* Storefront+Restore.swift in Sources */,
 				E1CEC27122088C1F00D4905C /* Storefront.swift in Sources */,
+				E1CEC2A32209CE1500D4905C /* Storefront+ProductRequest.swift in Sources */,
+				E1CEC2A92209CE1500D4905C /* Storefront+Purchase.swift in Sources */,
+				E1CEC2A72209CE1500D4905C /* Storefront+Transaction.swift in Sources */,
+				E1CEC2A52209CE1500D4905C /* Storefront+Delegates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

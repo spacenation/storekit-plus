@@ -3,6 +3,7 @@ import XCTest
 
 class StorefrontTests: XCTestCase {
     func testInit() {
-        XCTAssert(Storefront.version == "1.0.0")
+        let store = Storefront(product: "product.identifier")
+        XCTAssert(store.productIdentifier == "product.identifier")
     }
 }
