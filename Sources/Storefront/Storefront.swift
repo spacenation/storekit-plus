@@ -1,6 +1,3 @@
-///
-///  Copyright (c) 2013-2017 SpaceNation Inc.
-
 import Foundation
 import StoreKit
 
