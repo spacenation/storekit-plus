@@ -10,7 +10,7 @@ extension Storefront: SKProductsRequestDelegate {
             return
         }
 
-        delegates.forEach { $0.handleStore(event: .productRequestStarted) }
+        DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .productRequestStarted) } }
 
         isProcessingProductsRequest = true
         self.productRequest = SKProductsRequest(productIdentifiers: Set([productIdentifier]))
@@ -25,11 +25,11 @@ extension Storefront: SKProductsRequestDelegate {
             if initialProductRequest == true {
                 initialProductRequest = false
             } else {
-                delegates.forEach { $0.handleStore(event: .productRequestFailed) }
+                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .productRequestFailed) } }
             }
         } else {
             product = response.products.first
-            delegates.forEach { $0.handleStore(event: .productRequestCompleted) }
+            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .productRequestCompleted) } }
             /// Restore products
             //restoreProducts()
         }
@@ -42,7 +42,7 @@ extension Storefront: SKProductsRequestDelegate {
         if initialProductRequest == true {
             initialProductRequest = false
         } else {
-            delegates.forEach { $0.handleStore(event: .productRequestFailed) }
+            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .productRequestFailed) } }
         }
         productRequest = nil
     }
