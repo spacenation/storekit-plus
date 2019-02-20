@@ -26,6 +26,6 @@ extension Storefront {
 
     private func syncSuccessfulPurchaseFromOtherDevice() {
         savePurchase(identifier: self.productIdentifier)
-        delegates.forEach { $0.handleStore(event: .restoreCompleted) }
+        DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .restoreCompleted) } }
     }
 }

@@ -24,14 +24,14 @@ extension Storefront: SKPaymentTransactionObserver {
 
         isProcessingProductsPurchase = false
 
-        delegates.forEach { $0.handleStore(event: .transactionCompleted) }
+        DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .transactionCompleted) } }
 
         if isRestored {
             print("Store: Restored Purchase")
-            delegates.forEach { $0.handleStore(event: .restoreCompleted) }
+            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .restoreCompleted) } }
         } else {
             print("Store: Original Purchase")
-            delegates.forEach { $0.handleStore(event: .purchaseCompleted) }
+            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .purchaseCompleted) } }
         }
     }
 
@@ -41,14 +41,14 @@ extension Storefront: SKPaymentTransactionObserver {
             switch error.code {
             case .paymentCancelled:
                 print("Fail Cancelled")
-                delegates.forEach { $0.handleStore(event: .transactionCanceled) }
-                delegates.forEach { $0.handleStore(event: .transactionFailed) }
-                delegates.forEach { $0.handleStore(event: .purchaseFailed) }
+                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .transactionCanceled) } }
+                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .transactionFailed) } }
+                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .purchaseFailed) } }
 
             default:
                 print("Fail Error \(error) Code \(error.code)")
-                delegates.forEach { $0.handleStore(event: .transactionFailed) }
-                delegates.forEach { $0.handleStore(event: .purchaseFailed) }
+                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .transactionFailed) } }
+                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .purchaseFailed) } }
             }
         }
 

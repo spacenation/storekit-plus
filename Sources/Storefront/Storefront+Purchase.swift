@@ -13,11 +13,11 @@ extension Storefront {
             return
         }
 
-        delegates.forEach { $0.handleStore(event: .purchaseStarted) }
+        DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .purchaseStarted) } }
 
         guard SKPaymentQueue.canMakePayments() else {
             print("Purchase Prohibited")
-            delegates.forEach { $0.handleStore(event: .purchaseFailed) }
+            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .purchaseFailed) } }
             return
         }
 
@@ -26,7 +26,7 @@ extension Storefront {
             isProcessingProductsPurchase = true
             SKPaymentQueue.default().add(self)
             SKPaymentQueue.default().add(SKPayment(product: product) as SKPayment)
-            delegates.forEach { $0.handleStore(event: .transactionStarted) }
+            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .transactionStarted) } }
         }
     }
 
