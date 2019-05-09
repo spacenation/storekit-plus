@@ -5,10 +5,10 @@ jobs:
 - job: Code_Quality
   pool:
     vmImage: 'Ubuntu 16.04'
-  container: norionomura/swiftlint:swift-4.2.1
+  container: norionomura/swiftlint:swift-5
   timeoutInMinutes: 5
   steps:
   - script: |
-      set -o pipefail
+     set -o pipefail
       swiftlint lint --strict
-    displayName: 'swift lint'
+    displayName: 'SwiftLint'

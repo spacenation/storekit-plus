@@ -42,7 +42,7 @@ public extension SKProduct {
     /// Converts a price based on locale
     ///
     /// - returns: The price on String format based on current locale
-    public func localizedPrice() -> String {
+    func localizedPrice() -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = self.priceLocale
