@@ -1,10 +1,10 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
     name: "Storefront",
     platforms: [
-        .macOS(.v10_13), .iOS(.v12)
+         .iOS(.v13), .macOS(.v10_15)
     ],
     products: [
         .library(name: "Storefront", type: .static, targets: ["Storefront"])

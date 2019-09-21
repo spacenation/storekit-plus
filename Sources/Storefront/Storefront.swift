@@ -1,7 +1,15 @@
 import Foundation
 import StoreKit
 
-public class Storefront: NSObject {
+public class Storefront: NSObject, ObservableObject {
+    public enum State {
+        case idle
+        case productRequestStarted, productRequestCompleted, productRequestFailed
+        case purchaseStarted, purchaseCompleted, purchaseFailed
+        case restoreStarted, restoreCompleted, restoreFailed
+        case transactionStarted, transactionCompleted, transactionFailed, transactionCanceled
+    }
+    
     #if os(OSX)
     // MARK: - Receipt
     public class var hasReceipt: Bool {
@@ -12,14 +20,22 @@ public class Storefront: NSObject {
     }
     #endif
 
-    public internal(set) var product: SKProduct?
-
-    let cloudStorage = NSUbiquitousKeyValueStore()
-
-    /// Delegates
-    var delegates: [StorefrontDelegate] = []
+    public internal(set) var product: SKProduct? {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    
+    public internal(set) var userOwnsProduct: Bool {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    
+    @Published public internal(set) var state: State = .idle
 
     public var productIdentifier: String
+    
     var initialProductRequest: Bool = true
     /// An optional instance of SKProductsRequest
     var productRequest: SKProductsRequest?
@@ -28,12 +44,16 @@ public class Storefront: NSObject {
     var isProcessingProductsRequest = false
     /// A Bool value identifying if the product purchase in still in process
     var isProcessingProductsPurchase = false
+    
+    let cloudStorage = NSUbiquitousKeyValueStore()
 
     public init(product identifier: String) {
         print("Store: Init")
         productIdentifier = identifier
+        self.userOwnsProduct = UserDefaults.standard.string(forKey: Identifier.product.rawValue) == identifier
+        
         super.init()
-        print("Product", userHasProduct)
+        print("Product", userOwnsProduct)
         setupCloudStorage()
     }
 }

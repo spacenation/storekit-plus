@@ -21,18 +21,19 @@ extension Storefront: SKPaymentTransactionObserver {
     private func complete(transaction: SKPaymentTransaction, isRestored: Bool) {
         savePurchase(identifier: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
-
         isProcessingProductsPurchase = false
 
-        DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .transactionCompleted) } }
+        DispatchQueue.main.async { self.state = .transactionCompleted }
 
         if isRestored {
             print("Store: Restored Purchase")
-            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .restoreCompleted) } }
+            DispatchQueue.main.async { self.state = .restoreCompleted }
         } else {
             print("Store: Original Purchase")
-            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .purchaseCompleted) } }
+            DispatchQueue.main.async { self.state = .purchaseCompleted }
         }
+        
+        userOwnsProduct = true
     }
 
     /// Finalizes a failed transaction
@@ -41,14 +42,14 @@ extension Storefront: SKPaymentTransactionObserver {
             switch error.code {
             case .paymentCancelled:
                 print("Fail Cancelled")
-                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .transactionCanceled) } }
-                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .transactionFailed) } }
-                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .purchaseFailed) } }
+                DispatchQueue.main.async { self.state = .transactionCanceled }
+                DispatchQueue.main.async { self.state = .transactionFailed }
+                DispatchQueue.main.async { self.state = .purchaseFailed }
 
             default:
                 print("Fail Error \(error) Code \(error.code)")
-                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .transactionFailed) } }
-                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .purchaseFailed) } }
+                DispatchQueue.main.async { self.state = .transactionFailed }
+                DispatchQueue.main.async { self.state = .purchaseFailed }
             }
         }
 

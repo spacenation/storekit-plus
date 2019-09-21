@@ -6,11 +6,11 @@ extension Storefront: SKProductsRequestDelegate {
     ///
     /// - parameter identifiers: An array of String uniquely identifying the product
     public func requestProduct() {
-        guard !userHasProduct, !isProcessingProductsRequest else {
+        guard !userOwnsProduct, !isProcessingProductsRequest else {
             return
         }
 
-        DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .productRequestStarted) } }
+        DispatchQueue.main.async { self.state = .productRequestStarted }
 
         isProcessingProductsRequest = true
         self.productRequest = SKProductsRequest(productIdentifiers: Set([productIdentifier]))
@@ -25,11 +25,11 @@ extension Storefront: SKProductsRequestDelegate {
             if initialProductRequest == true {
                 initialProductRequest = false
             } else {
-                DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .productRequestFailed) } }
+                DispatchQueue.main.async { self.state = .productRequestFailed }
             }
         } else {
             product = response.products.first
-            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .productRequestCompleted) } }
+            DispatchQueue.main.async { self.state = .productRequestCompleted }
             /// Restore products
             //restoreProducts()
         }
@@ -42,7 +42,7 @@ extension Storefront: SKProductsRequestDelegate {
         if initialProductRequest == true {
             initialProductRequest = false
         } else {
-            DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .productRequestFailed) } }
+            DispatchQueue.main.async { self.state = .productRequestFailed }
         }
         productRequest = nil
     }

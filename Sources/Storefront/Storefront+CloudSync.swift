@@ -9,7 +9,7 @@ extension Storefront {
     }
 
     private func syncPurchaseToCloudStorage() {
-        if userHasProduct == true {
+        if userOwnsProduct == true {
             print("Saving purchase to Cloud Storage")
             NSUbiquitousKeyValueStore.default.set(true, forKey: "unlimited")
             NSUbiquitousKeyValueStore.default.synchronize()
@@ -18,7 +18,7 @@ extension Storefront {
 
     @objc
     func cloudStorageDidChangeExternally() {
-        if !userHasProduct && NSUbiquitousKeyValueStore.default.bool(forKey: "unlimited") == true {
+        if !userOwnsProduct && NSUbiquitousKeyValueStore.default.bool(forKey: "unlimited") == true {
             syncSuccessfulPurchaseFromOtherDevice()
             print("Cloud storage updated elsewhere to Unlimited")
         }
@@ -26,6 +26,7 @@ extension Storefront {
 
     private func syncSuccessfulPurchaseFromOtherDevice() {
         savePurchase(identifier: self.productIdentifier)
-        DispatchQueue.main.async { self.delegates.forEach { $0.handleStore(event: .restoreCompleted) } }
+        self.userOwnsProduct = true
+        DispatchQueue.main.async { self.state = .restoreCompleted }
     }
 }
