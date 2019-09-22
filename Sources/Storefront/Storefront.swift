@@ -22,13 +22,17 @@ public class Storefront: NSObject, ObservableObject {
 
     public internal(set) var product: SKProduct? {
         didSet {
-            objectWillChange.send()
+            DispatchQueue.main.async {
+                self.objectWillChange.send()
+            }
         }
     }
     
     public internal(set) var userOwnsProduct: Bool {
         didSet {
-            objectWillChange.send()
+            DispatchQueue.main.async {
+                self.objectWillChange.send()
+            }
         }
     }
     
