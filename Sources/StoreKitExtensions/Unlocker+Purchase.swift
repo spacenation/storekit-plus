@@ -1,7 +1,7 @@
 import Foundation
 import StoreKit
 
-extension Storefront {
+extension Unlocker {
     enum Identifier: String {
         case product
     }

@@ -1,7 +1,7 @@
 import Foundation
 import StoreKit
 
-public class Storefront: NSObject, ObservableObject {
+public class Unlocker: NSObject, ObservableObject {
     public enum State {
         case idle
         case productRequestStarted, productRequestCompleted, productRequestFailed
