@@ -1,6 +1,6 @@
 import Foundation
 
-extension Storefront {
+extension Unlocker {
     /// Cloud Storage
     func setupCloudStorage() {
         NotificationCenter.default.addObserver(self, selector: #selector(cloudStorageDidChangeExternally), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: self.cloudStorage)
@@ -11,16 +11,16 @@ extension Storefront {
     private func syncPurchaseToCloudStorage() {
         if userOwnsProduct == true {
             print("Saving purchase to Cloud Storage")
-            NSUbiquitousKeyValueStore.default.set(true, forKey: "unlimited")
+            NSUbiquitousKeyValueStore.default.set(true, forKey: "unlocked")
             NSUbiquitousKeyValueStore.default.synchronize()
         }
     }
 
     @objc
     func cloudStorageDidChangeExternally() {
-        if !userOwnsProduct && NSUbiquitousKeyValueStore.default.bool(forKey: "unlimited") == true {
+        if !userOwnsProduct && NSUbiquitousKeyValueStore.default.bool(forKey: "unlocked") == true {
             syncSuccessfulPurchaseFromOtherDevice()
-            print("Cloud storage updated elsewhere to Unlimited")
+            print("Cloud storage updated elsewhere")
         }
     }
 
