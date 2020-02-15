@@ -58,7 +58,6 @@ public class Unlocker: NSObject, ObservableObject {
         
         super.init()
         print("Product", userOwnsProduct)
-        setupCloudStorage()
     }
 }
 
