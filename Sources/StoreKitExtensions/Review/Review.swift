@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 import UIKit
 import StoreKit
@@ -59,5 +60,4 @@ public extension Review {
         }
     }
 }
-
-
+#endif
