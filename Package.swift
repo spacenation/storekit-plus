@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.2
 import PackageDescription
 
 let package = Package(
@@ -10,6 +10,7 @@ let package = Package(
         .library(name: "StoreKitExtensions", type: .static, targets: ["StoreKitExtensions"])
     ],
     targets: [
-        .target(name: "StoreKitExtensions")
+        .target(name: "StoreKitExtensions"),
+        .testTarget(name: "StoreKitExtensionsTests", dependencies: ["StoreKitExtensions"])
     ]
 )
