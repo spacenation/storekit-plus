@@ -1,6 +1,6 @@
 import Foundation
 
-extension Unlocker {
+extension Storefront {
     /// Cloud Storage
     public func setupCloudStorage() {
         NotificationCenter.default.addObserver(self, selector: #selector(cloudStorageDidChangeExternally), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: self.cloudStorage)

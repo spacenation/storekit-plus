@@ -1,7 +1,7 @@
 import XCTest
-import StoreKitExtensions
+import Storefront
 
-final class StoreKitExtensionsTests: XCTestCase {
+final class StorefrontTests: XCTestCase {
     func testEmpty() {
     }
 

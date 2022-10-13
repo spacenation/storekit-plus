@@ -1,7 +1,7 @@
 import Foundation
 import StoreKit
 
-extension Unlocker: SKPaymentTransactionObserver {
+extension Storefront: SKPaymentTransactionObserver {
     public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {

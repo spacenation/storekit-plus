@@ -1,7 +1,7 @@
 import Foundation
 import StoreKit
 
-extension Unlocker: SKProductsRequestDelegate {
+extension Storefront: SKProductsRequestDelegate {
     /// Starts an SKProducts request with the given product identifiers
     ///
     /// - parameter identifiers: An array of String uniquely identifying the product

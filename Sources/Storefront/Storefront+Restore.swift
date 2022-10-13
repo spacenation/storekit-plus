@@ -1,7 +1,7 @@
 import Foundation
 import StoreKit
 
-extension Unlocker {
+extension Storefront {
     public func restoreProducts() {
         print("Restore In-App Purchases")
         DispatchQueue.main.async { self.state = .restoreStarted }
