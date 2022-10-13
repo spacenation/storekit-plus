@@ -2,15 +2,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "StoreKitExtensions",
+    name: "Storefront",
     platforms: [
         .iOS(.v14), .macOS(.v11), .tvOS(.v14)
     ],
     products: [
-        .library(name: "StoreKitExtensions", type: .static, targets: ["StoreKitExtensions"])
+        .library(name: "Storefront", type: .static, targets: ["Storefront"])
     ],
     targets: [
-        .target(name: "StoreKitExtensions"),
-        .testTarget(name: "StoreKitExtensionsTests", dependencies: ["StoreKitExtensions"])
+        .target(name: "Storefront"),
+        .testTarget(name: "StorefrontTests", dependencies: ["Storefront"])
     ]
 )
