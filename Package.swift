@@ -7,7 +7,7 @@ let package = Package(
         .iOS(.v14), .macOS(.v11), .tvOS(.v14)
     ],
     products: [
-        .library(name: "Storefront", type: .static, targets: ["Storefront"])
+        .library(name: "Storefront", targets: ["Storefront"])
     ],
     targets: [
         .target(name: "Storefront"),
