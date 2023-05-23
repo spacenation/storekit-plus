@@ -1,7 +1,7 @@
 import XCTest
-import Storefront
+import StoreKitPlus
 
-final class StorefrontTests: XCTestCase {
+final class StoreKitPlusTests: XCTestCase {
     func testEmpty() {
     }
 
