@@ -3,8 +3,8 @@ import Foundation
 import StoreKit
 import SwiftUI
 
-@MainActor
-public final class StoreMessagesManager {
+@available(iOS 16.0, *)
+@MainActor public final class StoreMessagesManager {
     private var pendingMessages: [Message] = []
     private var updatesTask: Task<Void, Never>?
     
